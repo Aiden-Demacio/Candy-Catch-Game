@@ -25,6 +25,13 @@ public class candySpawn : MonoBehaviour
     void Update()
     {
         RandCandy = candies[Random.Range(0, candies.Length)];
+        float candyLocation = Random.Range(-4, 4);
+        Debug.Log(candyLocation);
+
+        
+
+
+        spawn();
     }
 
 
