@@ -6,7 +6,7 @@ public class candySpawn : MonoBehaviour
 {
 
     GameObject[] candies;
-
+    GameObject RandCandy;
     
 
 
@@ -24,13 +24,13 @@ public class candySpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        RandCandy = candies[Random.Range(0, candies.Length)];
     }
 
 
 
     void spawn()
     {
-        Instantiate(candies[Random.Range(0, candies.Length)], transform.position, Quaternion.identity);
+        Instantiate(RandCandy, transform.position, Quaternion.identity);
     }
 }
