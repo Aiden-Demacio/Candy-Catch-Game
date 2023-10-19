@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     float score = 0;
         
 
-    private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI scoreText;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
