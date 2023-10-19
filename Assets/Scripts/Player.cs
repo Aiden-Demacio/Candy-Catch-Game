@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using static UnityEditor.Timeline.TimelinePlaybackControls;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -10,24 +11,10 @@ public class Player : MonoBehaviour
 
     public float speed;
     public float horizontalInput;
-    //private static Controls _controls;
-    //public static void init(Player myPlayer)
-    //{
-    //    //    _controls = new Controls();
-
-
-    //    //    _controls.Game.Movement.performed += ctx =>
-    //    //    {
-    //    //        myPlayer.SetMovementDirection(ctx.ReadValue<Vector3>());
-    //    //    };
-
-
-    //    //    };
+    float score = 0;
         
-    //}
 
-
-    // Start is called before the first frame update
+    private TextMeshProUGUI scoreText;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -47,6 +34,10 @@ public class Player : MonoBehaviour
 
 
 
-
+    public void scoreCount(int amount)
+    {
+        score += amount;
+        scoreText.text = score.ToString();
+    }
 
 }

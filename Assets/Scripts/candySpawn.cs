@@ -18,7 +18,7 @@ public class candySpawn : MonoBehaviour
         {
             Debug.Log(candies[i].name);
         }
-        InvokeRepeating("Spawn", 2.0f, 2.0f);
+        InvokeRepeating("spawn", 2.0f, 2.0f);
     }
 
     // Update is called once per frame
@@ -28,16 +28,20 @@ public class candySpawn : MonoBehaviour
         float candyLocation = Random.Range(-4, 4);
         Debug.Log(candyLocation);
 
+        transform.position = (new Vector3(Random.Range(-4, 4), 2, 0));
         
 
 
-        spawn();
+        
     }
 
 
 
     void spawn()
     {
+        if (Time.frameCount < 32000) { 
         Instantiate(RandCandy, transform.position, Quaternion.identity);
+        }
+        
     }
 }
